@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Science Papers - NEHU</title>
   <link rel="stylesheet" href="assets/css/style.css">
+  <script src="assets/js/script.js" defer></script>
 </head>
 <body>
   <header>
@@ -12,7 +13,7 @@
       <div class="logo">NEHU Papers</div>
       <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
-        <li><a href="science.html">Science</a></li>
+        <li><a href="science.html" class="active">Science</a></li>
         <li><a href="arts.html">Arts</a></li>
         <li><a href="commerce.html">Commerce</a></li>
       </ul>
@@ -21,10 +22,14 @@
 
   <section class="hero">
     <h1>Science Question Papers</h1>
-    <p>Browse year-wise and semester-wise question papers.</p>
+    <p>Year-wise and semester-wise question papers.</p>
+    <div class="search-box">
+      <input type="text" id="searchInput" placeholder="Search Science papers...">
+      <button onclick="searchPapers()">Search</button>
+    </div>
   </section>
 
-  <section class="streams">
+  <section class="streams" id="paperList">
     <div class="card">
       <h2>2023</h2>
       <ul>
