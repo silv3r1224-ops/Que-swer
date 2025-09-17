@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Arts Papers - NEHU</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <div class="logo">NEHU Papers</div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="science.html" class="active">Science</a></li>
+        <li><a href="arts.html">Arts</a></li>
+        <li><a href="commerce.html">Commerce</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h1>Science Question Papers</h1>
+    <p>Year-wise and semester-wise question papers.</p>
+    <div class="search-box">
+      <input type="text" id="searchInput" placeholder="Search Science papers...">
+      <button onclick="searchPapers()">Search</button>
+    </div>
+  </section>
+
+  <section class="streams" id="paperList">
+    <div class="card">
+      <h2>2023</h2>
+      <ul>
+        <li>Semester 1 → <a href="papers/2023/science/sem1/physics.pdf" class="btn">Physics</a></li>
+        <li>Semester 1 → <a href="papers/2023/science/sem1/chemistry.pdf" class="btn">Chemistry</a></li>
+        <li>Semester 2 → <a href="papers/2023/science/sem2/math.pdf" class="btn">Mathematics</a></li>
+      </ul>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 NEHU Papers</p>
+  </footer>
+</body>
+</html>
