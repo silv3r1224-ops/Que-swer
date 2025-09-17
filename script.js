@@ -12,7 +12,11 @@ document.addEventListener("DOMContentLoaded", () => {
   accordions.forEach(btn => {
     btn.addEventListener("click", () => {
       const content = btn.nextElementSibling;
-      content.style.display = content.style.display === "block" ? "none" : "block";
+      if (content.style.display === "block") {
+        content.style.display = "none";
+      } else {
+        content.style.display = "block";
+      }
     });
   });
 });
