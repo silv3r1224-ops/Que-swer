@@ -9,39 +9,58 @@
 </head>
 <body>
   <header>
-    <nav class="navbar">
-      <div class="logo">NEHU Papers</div>
-      <ul class="nav-links">
+    <h1>Science Question Papers</h1>
+    <nav>
+      <ul>
         <li><a href="index.html">Home</a></li>
         <li><a href="science.html" class="active">Science</a></li>
         <li><a href="arts.html">Arts</a></li>
         <li><a href="commerce.html">Commerce</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
       </ul>
     </nav>
   </header>
 
-  <section class="hero">
-    <h1>Science Question Papers</h1>
-    <p>Year-wise and semester-wise question papers.</p>
-    <div class="search-box">
-      <input type="text" id="searchInput" placeholder="Search Science papers...">
-      <button onclick="searchPapers()">Search</button>
-    </div>
-  </section>
+  <main class="page-content">
+    <h2 class="section-title">Science Papers by Year</h2>
 
-  <section class="streams" id="paperList">
-    <div class="card">
-      <h2>2023</h2>
-      <ul>
-        <li>Semester 1 → <a href="papers/2023/science/sem1/physics.pdf" class="btn">Physics</a></li>
-        <li>Semester 1 → <a href="papers/2023/science/sem1/chemistry.pdf" class="btn">Chemistry</a></li>
-        <li>Semester 2 → <a href="papers/2023/science/sem2/math.pdf" class="btn">Mathematics</a></li>
-      </ul>
+    <!-- Year Card -->
+    <div class="accordion">
+      <button class="accordion-btn">2023</button>
+      <div class="accordion-content">
+
+        <!-- Semester 1 -->
+        <div class="accordion">
+          <button class="accordion-btn">Semester 1</button>
+          <div class="accordion-content">
+            <ul class="paper-list">
+              <li>Physics → <a href="papers/2023/science/sem1/physics.pdf" target="_blank">Download</a></li>
+              <li>Chemistry → <a href="papers/2023/science/sem1/chemistry.pdf" target="_blank">Download</a></li>
+              <li>Mathematics → <a href="papers/2023/science/sem1/math.pdf" target="_blank">Download</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Semester 2 -->
+        <div class="accordion">
+          <button class="accordion-btn">Semester 2</button>
+          <div class="accordion-content">
+            <ul class="paper-list">
+              <li>Biology → <a href="papers/2023/science/sem2/biology.pdf" target="_blank">Download</a></li>
+              <li>Computer Science → <a href="papers/2023/science/sem2/compsci.pdf" target="_blank">Download</a></li>
+              <li>Statistics → <a href="papers/2023/science/sem2/stats.pdf" target="_blank">Download</a></li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
     </div>
-  </section>
+
+  </main>
 
   <footer>
-    <p>© 2025 NEHU Papers</p>
+    <p>&copy; 2025 NEHU Question Papers. All Rights Reserved.</p>
   </footer>
 </body>
 </html>
