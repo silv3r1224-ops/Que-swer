@@ -17,6 +17,7 @@
       background: #111133;
       padding: 20px;
       color: #fff;
+      position: relative;
     }
     h1, h2 {
       margin: 20px 0;
@@ -60,19 +61,30 @@
     .btn:hover {
       background: linear-gradient(45deg, #3700b3, #7b00b3);
     }
+    /* Back button at top-right */
+    #back-btn {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+    }
+    #back-btn .btn {
+      margin: 0;
+      padding: 8px 15px;
+      font-size: 14px;
+    }
   </style>
 </head>
 <body>
 
   <header>
     <h1>Science Question Papers</h1>
+    <div id="back-btn"></div>
   </header>
 
   <main>
     <h2 id="step-title">Select Year</h2>
     <div id="options" class="container"></div>
     <div id="paper-view"></div>
-    <div id="back-btn"></div>
   </main>
 
   <script>
@@ -108,8 +120,12 @@
     const paperView = document.getElementById('paper-view');
     const backBtn = document.getElementById('back-btn');
 
-    function showBack(action) {
-      backBtn.innerHTML = `<button class="btn" onclick="${action}">⬅ Back</button>`;
+    function showBack(action, isHome=false) {
+      if (isHome) {
+        backBtn.innerHTML = `<a href="index.html" class="btn">⬅ Home</a>`;
+      } else {
+        backBtn.innerHTML = `<button class="btn" onclick="${action}">⬅ Back</button>`;
+      }
     }
 
     function clearBack() {
@@ -120,7 +136,7 @@
       title.textContent = "Select Year";
       options.innerHTML = "";
       paperView.innerHTML = "";
-      clearBack();
+      showBack("", true); // back to home
       Object.keys(data).forEach(year => {
         createCard(year, () => {
           currentYear = year;
