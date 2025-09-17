@@ -4,7 +4,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Science Question Papers</title>
-  <link rel="stylesheet" href="style.css">
   <style>
     body {
       font-family: 'Segoe UI', sans-serif;
@@ -49,12 +48,13 @@
     }
     .btn {
       display: inline-block;
-      margin-top: 15px;
+      margin: 15px 5px;
       padding: 10px 20px;
       background: linear-gradient(45deg, #4b00ff, #9b00ff);
       color: white;
       border-radius: 8px;
       text-decoration: none;
+      cursor: pointer;
       transition: 0.3s;
     }
     .btn:hover {
@@ -72,6 +72,7 @@
     <h2 id="step-title">Select Year</h2>
     <div id="options" class="container"></div>
     <div id="paper-view"></div>
+    <div id="back-btn"></div>
   </main>
 
   <script>
@@ -105,13 +106,26 @@
     const title = document.getElementById('step-title');
     const options = document.getElementById('options');
     const paperView = document.getElementById('paper-view');
+    const backBtn = document.getElementById('back-btn');
+
+    function showBack(action) {
+      backBtn.innerHTML = `<button class="btn" onclick="${action}">⬅ Back</button>`;
+    }
+
+    function clearBack() {
+      backBtn.innerHTML = "";
+    }
 
     function loadYears() {
       title.textContent = "Select Year";
       options.innerHTML = "";
       paperView.innerHTML = "";
+      clearBack();
       Object.keys(data).forEach(year => {
-        createCard(year, () => { currentYear = year; loadSemesters(year); });
+        createCard(year, () => {
+          currentYear = year;
+          loadSemesters(year);
+        });
       });
     }
 
@@ -120,8 +134,12 @@
       options.innerHTML = "";
       paperView.innerHTML = "";
       Object.keys(data[year]).forEach(sem => {
-        createCard(sem, () => { currentSemester = sem; loadSubjects(year, sem); });
+        createCard(sem, () => {
+          currentSemester = sem;
+          loadSubjects(year, sem);
+        });
       });
+      showBack("loadYears()");
     }
 
     function loadSubjects(year, semester) {
@@ -129,8 +147,11 @@
       options.innerHTML = "";
       paperView.innerHTML = "";
       Object.keys(data[year][semester]).forEach(subject => {
-        createCard(subject, () => { loadPaper(year, semester, subject); });
+        createCard(subject, () => {
+          loadPaper(year, semester, subject);
+        });
       });
+      showBack(`loadSemesters('${year}')`);
     }
 
     function loadPaper(year, semester, subject) {
@@ -141,9 +162,8 @@
         <iframe src="${pdf}" width="80%" height="600px"></iframe>
         <br>
         <a href="${pdf}" download class="btn">Download PDF</a>
-        <br><br>
-        <a href="#" class="btn" onclick="loadSubjects('${year}','${semester}')">Back to Subjects</a>
       `;
+      showBack(`loadSubjects('${year}','${semester}')`);
     }
 
     function createCard(label, action) {
@@ -154,7 +174,7 @@
       options.appendChild(card);
     }
 
-    // load first step
+    // start from years
     loadYears();
   </script>
 </body>
