@@ -114,3 +114,51 @@ footer {
   color: #999;
   margin-top: 20px;
 }
+/* Accordion Styles */
+.accordion {
+  margin: 10px 0;
+}
+
+.accordion-btn {
+  width: 100%;
+  text-align: left;
+  padding: 12px 15px;
+  background: linear-gradient(90deg, #2b1055, #2575fc);
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 500;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.accordion-btn:hover {
+  background: linear-gradient(90deg, #6a11cb, #2575fc);
+}
+
+.accordion-content {
+  display: none;
+  background: #1a1a2e;
+  padding: 10px 15px;
+  border-radius: 0 0 8px 8px;
+}
+
+.paper-list {
+  list-style: none;
+  padding-left: 10px;
+}
+
+.paper-list li {
+  margin: 8px 0;
+}
+
+.paper-list a {
+  color: #77aaff;
+  text-decoration: none;
+}
+
+.paper-list a:hover {
+  text-decoration: underline;
+}
+
