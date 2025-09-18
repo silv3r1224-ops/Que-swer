@@ -79,7 +79,7 @@ const data = {
       ],
       "Computer Science": [
         { name: "Object-Oriented programming using Java", folder: "NEHU/NEP/sem3/2024/BSC/Comp/Java", prefix: "Java", totalPages: 4 },
-        { name: "Digital logic design", folder: "NEHU/NEP/sem3/2024/BSC/Comp/DLD", prefix: "DLD", totalPages: 5 }
+        { name: "Digital logic design", folder: "NEHU/NEP/sem3/2024/BSC/Comp/DLD", prefix: "DLD", totalPages: 5 },
       ]
     },
     "Semester 4": {
