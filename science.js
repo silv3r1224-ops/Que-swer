@@ -1,54 +1,21 @@
 const data = {
-    "Sem 1": {
-    "2023": {
-      "Physics": "papers/2023/science/sem1/physics.pdf",
-      "Chemistry": "papers/2023/science/sem1/chemistry.pdf",
-      "Math": "papers/2023/science/sem1/math.pdf"
-    },
-    "2024": {
-      "Biology": "papers/2023/science/sem2/biology.pdf",
-      "Computer Science": "papers/2023/science/sem2/compsci.pdf"
-    },
-    "2025": {
-      "Bio": "",
-      "Chem": ""
-    }
+  "2023": {
+    "Semester 1": [
+      { name: "Question Paper 1", folder: "papers/2023/science/sem1/q1" },
+      { name: "Question Paper 2", folder: "papers/2023/science/sem1/q2" }
+    ],
+    "Semester 2": [
+      { name: "Question Paper 1", folder: "papers/2023/science/sem2/q1" }
+    ]
   },
-  "Sem 2": {
-       "2023": {
-      "Physics": "papers/2023/science/sem1/physics.pdf",
-      "Chemistry": "papers/2023/science/sem1/chemistry.pdf",
-      "Math": "papers/2023/science/sem1/math.pdf"
-    },
-    "2024": {
-      "Biology": "papers/2023/science/sem2/biology.pdf",
-      "Computer Science": "papers/2023/science/sem2/compsci.pdf"
-    },
-    "2025": {
-      "Computer science":"",
-      "Chemistry": "NEHU/NEP/sem3/"
-    }
-  },
-  "sem 3": {
-    "2023": {
-      "Physics": "papers/2023/science/sem1/physics.pdf",
-      "Chemistry": "papers/2023/science/sem1/chemistry.pdf",
-      "Math": "papers/2023/science/sem1/math.pdf"
-    },
-    "2024": {
-      "Biology": "papers/2023/science/sem2/biology.pdf",
-      "Chemistry": "NEHU/NEP/sem3/2024/BSC/chem/chem1.jpg",
-      "Computer Science": "papers/2023/science/sem2/compsci.pdf"
-    },
-    "2025": {
-      "Bio": "",
-      "Chem": ""
-    }
+  "2024": {
+    "Semester 1": [
+      { name: "Question Paper 1", folder: "papers/2024/science/sem1/q1" }
+    ]
   }
 };
 
 let currentYear = null;
-let currentSemester = null;
 
 const title = document.getElementById('step-title');
 const options = document.getElementById('options');
@@ -63,12 +30,8 @@ function showBack(action, isHome=false) {
   }
 }
 
-function clearBack() {
-  backBtn.innerHTML = "";
-}
-
 function loadYears() {
-  title.textContent = "Select semester";
+  title.textContent = "Select Year";
   options.innerHTML = "";
   paperView.innerHTML = "";
   showBack("", true); // back to home
@@ -81,40 +44,51 @@ function loadYears() {
 }
 
 function loadSemesters(year) {
-  title.textContent = `Select year (${year})`;
+  title.textContent = `Select Semester (${year})`;
   options.innerHTML = "";
   paperView.innerHTML = "";
   Object.keys(data[year]).forEach(sem => {
     createCard(sem, () => {
-      currentSemester = sem;
-      loadSubjects(year, sem);
+      loadPapers(year, sem);
     });
   });
   showBack("loadYears()");
 }
 
-function loadSubjects(year, semester) {
-  title.textContent = `Select Subject (${year} - ${semester})`;
+function loadPapers(year, semester) {
+  title.textContent = `${semester} Papers (${year})`;
   options.innerHTML = "";
   paperView.innerHTML = "";
-  Object.keys(data[year][semester]).forEach(subject => {
-    createCard(subject, () => {
-      loadPaper(year, semester, subject);
-    });
+  const papers = data[year][semester];
+
+  papers.forEach(paper => {
+    const div = document.createElement("div");
+    div.className = "card";
+    div.innerHTML = `<h3>${paper.name}</h3>`;
+    div.onclick = () => loadPaperPages(year, semester, paper);
+    options.appendChild(div);
   });
+
   showBack(`loadSemesters('${year}')`);
 }
 
-function loadPaper(year, semester, subject) {
-  title.textContent = `${subject} (${year} - ${semester})`;
+function loadPaperPages(year, semester, paper) {
+  title.textContent = `${paper.name} (${semester}, ${year})`;
   options.innerHTML = "";
-  const pdf = data[year][semester][subject];
-  paperView.innerHTML = `
-    <iframe src="${pdf}" width="80%" height="600px"></iframe>
-    <br>
-    <a href="${pdf}" download class="btn">Download PDF</a>
-  `;
-  showBack(`loadSubjects('${year}','${semester}')`);
+  paperView.innerHTML = "";
+
+  // load first 10 pages (you can increase limit)
+  for (let i = 1; i <= 10; i++) {
+    let imgPath = `${paper.folder}/${i}.jpg`;
+    let img = document.createElement("img");
+    img.src = imgPath;
+    img.onerror = function () {
+      this.remove(); // stop if image doesn't exist
+    };
+    paperView.appendChild(img);
+  }
+
+  showBack(`loadPapers('${year}','${semester}')`);
 }
 
 function createCard(label, action) {
