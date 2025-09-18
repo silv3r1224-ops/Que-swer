@@ -1,23 +1,47 @@
 const data = {
-  "2023": {
-    "Semester 1": {
+  "Sem 1": {
+    "2023": {
       "Physics": "papers/2023/science/sem1/physics.pdf",
       "Chemistry": "papers/2023/science/sem1/chemistry.pdf",
       "Math": "papers/2023/science/sem1/math.pdf"
     },
-    "Semester 2": {
+    "2024": {
       "Biology": "papers/2023/science/sem2/biology.pdf",
       "Computer Science": "papers/2023/science/sem2/compsci.pdf"
+    },
+    "2025": {
+      "Bio": "",
+      "Chem": ""
     }
   },
-  "2024": {
-    "Semester 1": {
-      "Physics": "papers/2024/science/sem1/physics.pdf"
+  "Sem 2": {
+       "2023": {
+      "Physics": "papers/2023/science/sem1/physics.pdf",
+      "Chemistry": "papers/2023/science/sem1/chemistry.pdf",
+      "Math": "papers/2023/science/sem1/math.pdf"
+    },
+    "2024": {
+      "Biology": "papers/2023/science/sem2/biology.pdf",
+      "Computer Science": "papers/2023/science/sem2/compsci.pdf"
+    },
+    "2025": {
+      "Computer science":"",
+      "Chemistry": "NEHU/NEP/sem3/"
     }
   },
-  "2025": {
-    "Semester 1": {
-      "Chemistry": "papers/2025/science/sem1/chemistry.pdf"
+  "sem 3": {
+    "2023": {
+      "Physics": "papers/2023/science/sem1/physics.pdf",
+      "Chemistry": "papers/2023/science/sem1/chemistry.pdf",
+      "Math": "papers/2023/science/sem1/math.pdf"
+    },
+    "2024": {
+      "Biology": "papers/2023/science/sem2/biology.pdf",
+      "Computer Science": "papers/2023/science/sem2/compsci.pdf"
+    },
+    "2025": {
+      "Bio": "",
+      "Chem": ""
     }
   }
 };
