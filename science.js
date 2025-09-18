@@ -32,11 +32,18 @@ const data = {
       { name: "Physics", folder: "NEHU/NEP/sem1/2023/BSC/physics", prefix: "phy", totalPages: 5 },
       { name: "Chemistry", folder: "NEHU/NEP/sem1/2023/BSC/chem", prefix: "chem", totalPages: 6 }
     ],
-    "Semester 3": [
-      { name: "Chemistry", folder: "NEHU/NEP/sem3/2024/BSC/chem", prefix: "chem", totalPages: 11 },
-      { name: "Mathematics", folder: "NEHU/NEP/sem3/2024/BSC/maths", prefix: "maths", totalPages: 8 },
+    "Semester 3": {
+      "Chemistry": [
+      { name: "Chemistry", folder: "NEHU/NEP/sem3/2024/BSC/chem", prefix: "chem", totalPages: 11 }
+      ],
+      "Mathematics": [
+      { name: "Calculas-I and Statistics", folder: "NEHU/NEP/sem3/2024/BSC/maths/calnstat", prefix: "calnstat", totalPages: 8 },
       { name: "Computer science", folder: "NEHU/NEP/sem3/2024/BSC/Comp", prefix: "Comp", totalPages: 4 }
-    ],
+      ],
+      "Computer Science": [
+         { name: "Computer science", folder: "NEHU/NEP/sem3/2024/BSC/Comp", prefix: "Comp", totalPages: 4 }
+      ]
+    },
     "Semester 4": [
       { name: "Physics", folder: "NEHU/NEP/sem1/2023/BSC/physics", prefix: "phy", totalPages: 5 },
       { name: "Chemistry", folder: "NEHU/NEP/sem1/2023/BSC/chem", prefix: "chem", totalPages: 6 }
