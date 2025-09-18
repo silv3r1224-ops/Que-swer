@@ -75,7 +75,7 @@ const data = {
       ],
       "Mathematics": [
         { name: "Calculus-I and Statistics", folder: "NEHU/NEP/sem3/2024/BSC/maths/calnstat", prefix: "calnstat", totalPages: 8 },
-        { name: "Group Theory", folder: "NEHU/NEP/sem3/2024/BSC/maths/gt", prefix: "gt", totalPages: 4 }
+        { name: "Group Theory", folder: "NEHU/NEP/sem3/2024/BSC/maths/gt", prefix: "gt", totalPages: 6 }
       ],
       "Computer Science": [
         { name: "Object Oriented Java", folder: "NEHU/NEP/sem3/2024/BSC/Comp/Java", prefix: "java", totalPages: 4 },
