@@ -38,7 +38,7 @@ const data = {
       ],
       "Mathematics": [
       { name: "Calculas-I and Statistics", folder: "NEHU/NEP/sem3/2024/BSC/maths/calnstat", prefix: "calnstat", totalPages: 8 },
-      { name: "Computer science", folder: "NEHU/NEP/sem3/2024/BSC/Comp", prefix: "Comp", totalPages: 4 }
+      { name: "Group theory", folder: "NEHU/NEP/sem3/2024/BSC/maths/gt", prefix: "gt", totalPages: 4 }
       ],
       "Computer Science": [
          { name: "Computer science", folder: "NEHU/NEP/sem3/2024/BSC/Comp", prefix: "Comp", totalPages: 4 }
