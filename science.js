@@ -1,126 +1,32 @@
+// ========================
+// Data for Science Papers
+// ========================
 const data = {
   "2023": {
     "Semester 1": [
-      { name: "Question Paper 1", folder: "papers/2023/science/sem1/q1" },
-      { name: "Question Paper 2", folder: "papers/2023/science/sem1/q2" }
+      { name: "Physics", folder: "NEHU/NEP/sem1/2023/BSC/physics", prefix: "phy", totalPages: 5 },
+      { name: "Chemistry", folder: "NEHU/NEP/sem1/2023/BSC/chem", prefix: "chem", totalPages: 6 }
     ],
     "Semester 2": [
-      { name: "Question Paper 1", folder: "papers/2023/science/sem1/q1" },
-      { name: "Question Paper 2", folder: "papers/2023/science/sem1/q2" }
-    ],
-    "Semester 3": [
-      { name: "Question Paper 1", folder: "papers/2023/science/sem1/q1" },
-      { name: "Question Paper 1", folder: "papers/2023/science/sem1/q1" },
-      { name: "Question Paper 1", folder: "papers/2023/science/sem1/q1" },
-      { name: "Question Paper 1", folder: "papers/2023/science/sem1/q1" },
-      { name: "Question Paper 2", folder: "papers/2023/science/sem1/q2" }
-    ],
-    "Semester 4": [
-      { name: "Question Paper 1", folder: "papers/2023/science/sem1/q1" },
-      { name: "Question Paper 1", folder: "papers/2023/science/sem1/q1" },
-      { name: "Question Paper 1", folder: "papers/2023/science/sem1/q1" },
-      { name: "Question Paper 1", folder: "papers/2023/science/sem1/q1" },
-      { name: "Question Paper 1", folder: "papers/2023/science/sem1/q1" },
-      { name: "Question Paper 2", folder: "papers/2023/science/sem1/q2" }
-    ],
-    "Semester 5": [
-      { name: "Question Paper 1", folder: "papers/2023/science/sem1/q1" },
-      { name: "Question Paper 1", folder: "papers/2023/science/sem1/q1" },
-      { name: "Question Paper 1", folder: "papers/2023/science/sem1/q1" },
-      { name: "Question Paper 1", folder: "papers/2023/science/sem1/q1" },
-      { name: "Question Paper 1", folder: "papers/2023/science/sem1/q1" },
-      { name: "Question Paper 2", folder: "papers/2023/science/sem1/q2" }
-    ],
-    "Semester 6": [
-      { name: "Question Paper 1", folder: "papers/2023/science/sem1/q1" },
-      { name: "Question Paper 1", folder: "papers/2023/science/sem1/q1" },
-      { name: "Question Paper 1", folder: "papers/2023/science/sem1/q1" },
-      { name: "Question Paper 1", folder: "papers/2023/science/sem1/q1" },
-      { name: "Question Paper 2", folder: "papers/2023/science/sem1/q2" }
+      { name: "Biology", folder: "NEHU/NEP/sem2/2023/BSC/bio", prefix: "bio", totalPages: 4 }
     ]
   },
   "2024": {
-    "Semester 1": [
-      { name: "Question Paper 1", folder: "papers/2023/science/sem1/q1" },
-      { name: "Question Paper 2", folder: "papers/2023/science/sem1/q2" }
-    ],
-    "Semester 2": [
-      { name: "Question Paper 1", folder: "papers/2023/science/sem1/q1" },
-      { name: "Question Paper 2", folder: "papers/2023/science/sem1/q2" }
-    ],
     "Semester 3": [
       { name: "Chemistry", folder: "NEHU/NEP/sem3/2024/BSC/chem", prefix: "chem", totalPages: 11 },
-      { name: "Mathematics", folder: "NEHU/NEP/sem3/2024/BSC/maths" },
-      { name: "Question Paper 1", folder: "papers/2023/science/sem1/q1" },
-      { name: "Question Paper 1", folder: "papers/2023/science/sem1/q1" },
-      { name: "Question Paper 2", folder: "papers/2023/science/sem1/q2" }
-    ],
-    "Semester 4": [
-      { name: "Question Paper 1", folder: "papers/2023/science/sem1/q1" },
-      { name: "Question Paper 1", folder: "papers/2023/science/sem1/q1" },
-      { name: "Question Paper 1", folder: "papers/2023/science/sem1/q1" },
-      { name: "Question Paper 1", folder: "papers/2023/science/sem1/q1" },
-      { name: "Question Paper 1", folder: "papers/2023/science/sem1/q1" },
-      { name: "Question Paper 2", folder: "papers/2023/science/sem1/q2" }
-    ],
-    "Semester 5": [
-      { name: "Question Paper 1", folder: "papers/2023/science/sem1/q1" },
-      { name: "Question Paper 1", folder: "papers/2023/science/sem1/q1" },
-      { name: "Question Paper 1", folder: "papers/2023/science/sem1/q1" },
-      { name: "Question Paper 1", folder: "papers/2023/science/sem1/q1" },
-      { name: "Question Paper 1", folder: "papers/2023/science/sem1/q1" },
-      { name: "Question Paper 2", folder: "papers/2023/science/sem1/q2" }
-    ],
-    "Semester 6": [
-      { name: "Question Paper 1", folder: "papers/2023/science/sem1/q1" },
-      { name: "Question Paper 1", folder: "papers/2023/science/sem1/q1" },
-      { name: "Question Paper 1", folder: "papers/2023/science/sem1/q1" },
-      { name: "Question Paper 1", folder: "papers/2023/science/sem1/q1" },
-      { name: "Question Paper 2", folder: "papers/2023/science/sem1/q2" }
+      { name: "Mathematics", folder: "NEHU/NEP/sem3/2024/BSC/maths", prefix: "maths", totalPages: 8 }
     ]
   },
   "2025": {
     "Semester 1": [
-      { name: "Question Paper 1", folder: "papers/2023/science/sem1/q1" },
-      { name: "Question Paper 2", folder: "papers/2023/science/sem1/q2" }
-    ],
-    "Semester 2": [
-      { name: "Question Paper 1", folder: "papers/2023/science/sem1/q1" },
-      { name: "Question Paper 2", folder: "papers/2023/science/sem1/q2" }
-    ],
-    "Semester 3": [
-      { name: "Question Paper 1", folder: "papers/2023/science/sem1/q1" },
-      { name: "Question Paper 1", folder: "papers/2023/science/sem1/q1" },
-      { name: "Question Paper 1", folder: "papers/2023/science/sem1/q1" },
-      { name: "Question Paper 1", folder: "papers/2023/science/sem1/q1" },
-      { name: "Question Paper 2", folder: "papers/2023/science/sem1/q2" }
-    ],
-    "Semester 4": [
-      { name: "Question Paper 1", folder: "papers/2023/science/sem1/q1" },
-      { name: "Question Paper 1", folder: "papers/2023/science/sem1/q1" },
-      { name: "Question Paper 1", folder: "papers/2023/science/sem1/q1" },
-      { name: "Question Paper 1", folder: "papers/2023/science/sem1/q1" },
-      { name: "Question Paper 1", folder: "papers/2023/science/sem1/q1" },
-      { name: "Question Paper 2", folder: "papers/2023/science/sem1/q2" }
-    ],
-    "Semester 5": [
-      { name: "Question Paper 1", folder: "papers/2023/science/sem1/q1" },
-      { name: "Question Paper 1", folder: "papers/2023/science/sem1/q1" },
-      { name: "Question Paper 1", folder: "papers/2023/science/sem1/q1" },
-      { name: "Question Paper 1", folder: "papers/2023/science/sem1/q1" },
-      { name: "Question Paper 1", folder: "papers/2023/science/sem1/q1" },
-      { name: "Question Paper 2", folder: "papers/2023/science/sem1/q2" }
-    ],
-    "Semester 6": [
-      { name: "Question Paper 1", folder: "papers/2023/science/sem1/q1" },
-      { name: "Question Paper 1", folder: "papers/2023/science/sem1/q1" },
-      { name: "Question Paper 1", folder: "papers/2023/science/sem1/q1" },
-      { name: "Question Paper 1", folder: "papers/2023/science/sem1/q1" },
-      { name: "Question Paper 2", folder: "papers/2023/science/sem1/q2" }
+      { name: "Physics", folder: "NEHU/NEP/sem1/2025/BSC/physics", prefix: "phy", totalPages: 7 }
     ]
   }
 };
 
+// ========================
+// Globals
+// ========================
 let currentYear = null;
 
 const title = document.getElementById('step-title');
@@ -128,6 +34,9 @@ const options = document.getElementById('options');
 const paperView = document.getElementById('paper-view');
 const backBtn = document.getElementById('back-btn');
 
+// ========================
+// Navigation Helpers
+// ========================
 function showBack(action, isHome=false) {
   if (isHome) {
     backBtn.innerHTML = `<a href="index.html" class="btn">⬅ Home</a>`;
@@ -136,11 +45,14 @@ function showBack(action, isHome=false) {
   }
 }
 
+// ========================
+// Load Functions
+// ========================
 function loadYears() {
   title.textContent = "Select Year";
   options.innerHTML = "";
   paperView.innerHTML = "";
-  showBack("", true); // back to home
+  showBack("", true);
   Object.keys(data).forEach(year => {
     createCard(year, () => {
       currentYear = year;
@@ -168,11 +80,9 @@ function loadPapers(year, semester) {
   const papers = data[year][semester];
 
   papers.forEach(paper => {
-    const div = document.createElement("div");
-    div.className = "card";
-    div.innerHTML = `<h3>${paper.name}</h3>`;
-    div.onclick = () => loadPaperPages(year, semester, paper);
-    options.appendChild(div);
+    createCard(paper.name, () => {
+      loadPaperPages(year, semester, paper);
+    });
   });
 
   showBack(`loadSemesters('${year}')`);
@@ -183,20 +93,21 @@ function loadPaperPages(year, semester, paper) {
   options.innerHTML = "";
   paperView.innerHTML = "";
 
-  // load first 10 pages (you can increase limit)
-  for (let i = 1; i <= 10; i++) {
-    let imgPath = `${paper.folder}/${i}.jpg`;
+  for (let i = 1; i <= paper.totalPages; i++) {
+    let imgPath = `${paper.folder}/${paper.prefix}${i}.jpg`;
     let img = document.createElement("img");
+    img.setAttribute("loading", "lazy");
     img.src = imgPath;
-    img.onerror = function () {
-      this.remove(); // stop if image doesn't exist
-    };
+    img.alt = `${paper.name} Page ${i}`;
     paperView.appendChild(img);
   }
 
   showBack(`loadPapers('${year}','${semester}')`);
 }
 
+// ========================
+// Helpers
+// ========================
 function createCard(label, action) {
   const card = document.createElement('div');
   card.className = "card";
@@ -205,5 +116,7 @@ function createCard(label, action) {
   options.appendChild(card);
 }
 
-// start from years
+// ========================
+// Start App
+// ========================
 loadYears();
