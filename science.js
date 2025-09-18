@@ -1,5 +1,5 @@
 const data = {
-  "Sem 1": {
+    "Sem 1": {
     "2023": {
       "Physics": "papers/2023/science/sem1/physics.pdf",
       "Chemistry": "papers/2023/science/sem1/chemistry.pdf",
