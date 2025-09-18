@@ -1,67 +1,65 @@
 body {
-  font-family: 'Segoe UI', sans-serif;
-  background: linear-gradient(135deg, #0f0f2d, #1a0033);
-  color: #eee;
+  font-family: 'Segoe UI', Tahoma, sans-serif;
   margin: 0;
-  padding: 0;
-  text-align: center;
+  background: linear-gradient(135deg, #0f0f1f, #1a0033);
+  color: #eee;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 header {
-  background: #111133;
-  padding: 20px;
-  color: #fff;
-  position: relative;
+  background: #111122;
+  padding: 1.2rem 2rem;
+  text-align: center;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.5);
 }
 
-h1, h2 {
-  margin: 20px 0;
+header h1 {
+  color: #9d8df1;
+  margin: 0;
+  font-size: 1.6rem;
 }
 
-.container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 15px;
-  margin: 20px;
+main {
+  flex: 1;
+  padding: 2rem;
+  text-align: center;
+}
+
+h2 {
+  margin-bottom: 1.5rem;
+  color: #b8a4ff;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  justify-items: center;
 }
 
 .card {
   background: #1e1e3f;
-  border-radius: 10px;
-  padding: 20px;
-  width: 200px;
-  cursor: pointer;
-  transition: transform 0.2s, background 0.3s;
+  border-radius: 14px;
+  padding: 2rem;
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #eee;
+  text-decoration: none;
+  width: 220px;
+  transition: transform 0.3s, background 0.3s;
 }
 .card:hover {
-  transform: translateY(-5px);
-  background: #292955;
+  background: #2c2c60;
+  transform: scale(1.08);
 }
 
-.btn {
-  display: inline-block;
-  margin: 10px 5px;
-  padding: 8px 15px;
-  background: linear-gradient(45deg, #4b00ff, #9b00ff);
-  color: white;
-  border-radius: 6px;
-  text-decoration: none;
-  cursor: pointer;
-  transition: 0.3s;
-}
-.btn:hover {
-  background: linear-gradient(45deg, #3700b3, #7b00b3);
-}
-
-/* Back button at top-right */
-#back-btn {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-}
-#back-btn .btn {
-  margin: 0;
-  padding: 8px 15px;
-  font-size: 14px;
+footer {
+  background: #111122;
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.9rem;
+  color: #888;
 }
