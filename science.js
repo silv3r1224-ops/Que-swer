@@ -175,7 +175,7 @@ const backBtn = document.getElementById('back-btn');
 // ========================
 function showBack(action, isHome=false) {
   if (isHome) {
-    backBtn.innerHTML = `<a href="../index.html" class="btn">⬅ Home</a>`;
+    backBtn.innerHTML = `<a href="index.html" class="btn">⬅ Home</a>`;
   } else {
     backBtn.innerHTML = `<button class="btn" onclick="${action}">⬅ Back</button>`;
   }
