@@ -3,77 +3,29 @@
 // ========================
 const data = {
   "2023": {
-    "Semester 1": [
-      { name: "Physics", folder: "NEHU/NEP/sem1/2023/BSC/physics", prefix: "phy", totalPages: 5 },
-      { name: "Chemistry", folder: "NEHU/NEP/sem1/2023/BSC/chem", prefix: "chem", totalPages: 6 }
-    ],
-    "Semester 2": [
-      { name: "Physics", folder: "NEHU/NEP/sem1/2023/BSC/physics", prefix: "phy", totalPages: 5 },
-      { name: "Chemistry", folder: "NEHU/NEP/sem1/2023/BSC/chem", prefix: "chem", totalPages: 6 }
-    ],
-    "Semester 3": [
-      { name: "Physics", folder: "NEHU/NEP/sem1/2023/BSC/physics", prefix: "phy", totalPages: 5 },
-      { name: "Chemistry", folder: "NEHU/NEP/sem1/2023/BSC/chem", prefix: "chem", totalPages: 6 }
-    ],
-    "Semester 4": [
-      { name: "Physics", folder: "NEHU/NEP/sem1/2023/BSC/physics", prefix: "phy", totalPages: 5 },
-      { name: "Chemistry", folder: "NEHU/NEP/sem1/2023/BSC/chem", prefix: "chem", totalPages: 6 }
-    ],
-    "Semester 5": [
-      { name: "Biology", folder: "NEHU/NEP/sem2/2023/BSC/bio", prefix: "bio", totalPages: 4 }
-    ]
+    "Semester 1": {
+      "Physics": [
+        { name: "Physics", folder: "NEHU/NEP/sem1/2023/BSC/physics", prefix: "phy", totalPages: 5 }
+      ],
+      "Chemistry": [
+        { name: "Chemistry", folder: "NEHU/NEP/sem1/2023/BSC/chem", prefix: "chem", totalPages: 6 }
+      ]
+    }
   },
   "2024": {
-    "Semester 1": [
-      { name: "Physics", folder: "NEHU/NEP/sem1/2023/BSC/physics", prefix: "phy", totalPages: 5 },
-      { name: "Chemistry", folder: "NEHU/NEP/sem1/2023/BSC/chem", prefix: "chem", totalPages: 6 }
-    ],
-    "Semester 2": [
-      { name: "Physics", folder: "NEHU/NEP/sem1/2023/BSC/physics", prefix: "phy", totalPages: 5 },
-      { name: "Chemistry", folder: "NEHU/NEP/sem1/2023/BSC/chem", prefix: "chem", totalPages: 6 }
-    ],
     "Semester 3": {
       "Chemistry": [
-      { name: "Chemistry", folder: "NEHU/NEP/sem3/2024/BSC/chem", prefix: "chem", totalPages: 11 }
+        { name: "Chemistry", folder: "NEHU/NEP/sem3/2024/BSC/chem", prefix: "chem", totalPages: 11 }
       ],
       "Mathematics": [
-      { name: "Calculas-I and Statistics", folder: "NEHU/NEP/sem3/2024/BSC/maths/calnstat", prefix: "calnstat", totalPages: 8 },
-      { name: "Group theory", folder: "NEHU/NEP/sem3/2024/BSC/maths/gt", prefix: "gt", totalPages: 4 }
+        { name: "Calculus-I and Statistics", folder: "NEHU/NEP/sem3/2024/BSC/maths/calnstat", prefix: "calnstat", totalPages: 8 },
+        { name: "Group Theory", folder: "NEHU/NEP/sem3/2024/BSC/maths/gt", prefix: "gt", totalPages: 4 }
       ],
       "Computer Science": [
-      { name: "Object oriented Java", folder: "NEHU/NEP/sem3/2024/BSC/Comp/Java", prefix: "java", totalPages: 4 },
-      { name: "Computer science", folder: "NEHU/NEP/sem3/2024/BSC/Comp", prefix: "Comp", totalPages: 4 }
+        { name: "Object Oriented Java", folder: "NEHU/NEP/sem3/2024/BSC/Comp/Java", prefix: "java", totalPages: 4 },
+        { name: "Computer Science", folder: "NEHU/NEP/sem3/2024/BSC/Comp", prefix: "comp", totalPages: 4 }
       ]
-    },
-    "Semester 4": [
-      { name: "Physics", folder: "NEHU/NEP/sem1/2023/BSC/physics", prefix: "phy", totalPages: 5 },
-      { name: "Chemistry", folder: "NEHU/NEP/sem1/2023/BSC/chem", prefix: "chem", totalPages: 6 }
-    ],
-    "Semester 5": [
-      { name: "Physics", folder: "NEHU/NEP/sem1/2023/BSC/physics", prefix: "phy", totalPages: 5 },
-      { name: "Chemistry", folder: "NEHU/NEP/sem1/2023/BSC/chem", prefix: "chem", totalPages: 6 }
-    ]
-  },
-  "2025": {
-    "Semester 1": [
-      { name: "Physics", folder: "NEHU/NEP/sem1/2023/BSC/physics", prefix: "phy", totalPages: 5 },
-      { name: "Chemistry", folder: "NEHU/NEP/sem1/2023/BSC/chem", prefix: "chem", totalPages: 6 }
-    ],
-    "Semester 2": [
-      { name: "Physics", folder: "NEHU/NEP/sem1/2023/BSC/physics", prefix: "phy", totalPages: 5 },
-      { name: "Chemistry", folder: "NEHU/NEP/sem1/2023/BSC/chem", prefix: "chem", totalPages: 6 }
-    ],
-    "Semester 3": [
-      { name: "Physics", folder: "NEHU/NEP/sem1/2023/BSC/physics", prefix: "phy", totalPages: 5 },
-      { name: "Chemistry", folder: "NEHU/NEP/sem1/2023/BSC/chem", prefix: "chem", totalPages: 6 }
-    ],
-    "Semester 4": [
-      { name: "Physics", folder: "NEHU/NEP/sem1/2023/BSC/physics", prefix: "phy", totalPages: 5 },
-      { name: "Chemistry", folder: "NEHU/NEP/sem1/2023/BSC/chem", prefix: "chem", totalPages: 6 }
-    ],
-    "Semester 5": [
-      { name: "Biology", folder: "NEHU/NEP/sem2/2023/BSC/bio", prefix: "bio", totalPages: 4 }
-    ]
+    }
   }
 };
 
@@ -81,6 +33,7 @@ const data = {
 // Globals
 // ========================
 let currentYear = null;
+let currentSemester = null;
 
 const title = document.getElementById('step-title');
 const options = document.getElementById('options');
@@ -92,7 +45,7 @@ const backBtn = document.getElementById('back-btn');
 // ========================
 function showBack(action, isHome=false) {
   if (isHome) {
-    backBtn.innerHTML = `<a href="index.html" class="btn">⬅ Home</a>`;
+    backBtn.innerHTML = `<a href="../index.html" class="btn">⬅ Home</a>`;
   } else {
     backBtn.innerHTML = `<button class="btn" onclick="${action}">⬅ Back</button>`;
   }
@@ -106,6 +59,7 @@ function loadYears() {
   options.innerHTML = "";
   paperView.innerHTML = "";
   showBack("", true);
+
   Object.keys(data).forEach(year => {
     createCard(year, () => {
       currentYear = year;
@@ -118,31 +72,48 @@ function loadSemesters(year) {
   title.textContent = `Select Semester (${year})`;
   options.innerHTML = "";
   paperView.innerHTML = "";
+
   Object.keys(data[year]).forEach(sem => {
     createCard(sem, () => {
-      loadPapers(year, sem);
+      currentSemester = sem;
+      loadSubjects(year, sem);
     });
   });
+
   showBack("loadYears()");
 }
 
-function loadPapers(year, semester) {
-  title.textContent = `${semester} Papers (${year})`;
+function loadSubjects(year, semester) {
+  title.textContent = `Select Subject (${semester}, ${year})`;
   options.innerHTML = "";
   paperView.innerHTML = "";
-  const papers = data[year][semester];
 
-  papers.forEach(paper => {
-    createCard(paper.name, () => {
-      loadPaperPages(year, semester, paper);
+  Object.keys(data[year][semester]).forEach(subject => {
+    createCard(subject, () => {
+      loadPapers(year, semester, subject);
     });
   });
 
   showBack(`loadSemesters('${year}')`);
 }
 
-function loadPaperPages(year, semester, paper) {
-  title.textContent = `${paper.name} (${semester}, ${year})`;
+function loadPapers(year, semester, subject) {
+  title.textContent = `Select Paper (${subject}, ${semester}, ${year})`;
+  options.innerHTML = "";
+  paperView.innerHTML = "";
+
+  const papers = data[year][semester][subject];
+  papers.forEach(paper => {
+    createCard(paper.name, () => {
+      loadPaperPages(year, semester, subject, paper);
+    });
+  });
+
+  showBack(`loadSubjects('${year}','${semester}')`);
+}
+
+function loadPaperPages(year, semester, subject, paper) {
+  title.textContent = `${paper.name} (${subject}, ${semester}, ${year})`;
   options.innerHTML = "";
   paperView.innerHTML = "";
 
@@ -155,7 +126,7 @@ function loadPaperPages(year, semester, paper) {
     paperView.appendChild(img);
   }
 
-  showBack(`loadPapers('${year}','${semester}')`);
+  showBack(`loadPapers('${year}','${semester}','${subject}')`);
 }
 
 // ========================
