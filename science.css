@@ -1,75 +1,81 @@
 body {
-  font-family: 'Segoe UI', sans-serif;
-  background: linear-gradient(135deg, #0f0f2d, #1a0033);
-  color: #eee;
+  font-family: 'Segoe UI', Tahoma, sans-serif;
   margin: 0;
-  padding: 0;
-  text-align: center;
+  background: linear-gradient(135deg, #0f0f1f, #1a0033);
+  color: #eee;
+  min-height: 100vh;
 }
 
 header {
-  background: #111133;
-  padding: 20px;
-  color: #fff;
-  position: relative;
-}
-
-h1, h2 {
-  margin: 20px 0;
-}
-
-.container {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 15px;
-  margin: 20px;
+  justify-content: space-between;
+  align-items: center;
+  background: #111122;
+  padding: 1rem 2rem;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+}
+
+header h1 {
+  color: #9d8df1;
+  font-size: 1.5rem;
+}
+
+#back-btn {
+  position: absolute;
+  right: 20px;
+}
+
+.btn {
+  background: #2d1b69;
+  border: none;
+  color: #eee;
+  padding: 0.6rem 1.2rem;
+  margin: 0.3rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+.btn:hover {
+  background: #5033a8;
+}
+
+main {
+  padding: 2rem;
+}
+
+h2 {
+  margin-bottom: 1rem;
+  color: #b8a4ff;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
 }
 
 .card {
   background: #1e1e3f;
-  border-radius: 10px;
-  padding: 20px;
-  width: 200px;
+  border-radius: 12px;
+  padding: 1rem;
+  text-align: center;
   cursor: pointer;
   transition: transform 0.2s, background 0.3s;
 }
 .card:hover {
-  transform: translateY(-5px);
-  background: #292955;
+  background: #2c2c60;
+  transform: scale(1.05);
 }
 
-.btn {
-  display: inline-block;
-  margin: 10px 5px;
-  padding: 8px 15px;
-  background: linear-gradient(45deg, #4b00ff, #9b00ff);
-  color: white;
-  border-radius: 6px;
-  text-decoration: none;
-  cursor: pointer;
-  transition: 0.3s;
+.paper-container {
+  margin-top: 2rem;
 }
-.btn:hover {
-  background: linear-gradient(45deg, #3700b3, #7b00b3);
-}
-
-/* Back button at top-right */
-#back-btn {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-}
-#back-btn .btn {
-  margin: 0;
-  padding: 8px 15px;
-  font-size: 14px;
-}
-
-#paper-view img {
-  max-width: 90%;
-  margin: 10px auto;
+.paper-container img {
+  width: 100%;
+  max-width: 800px;
   display: block;
+  margin: 1rem auto;
   border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.5);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.6);
 }
