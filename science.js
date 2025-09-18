@@ -37,6 +37,7 @@ const data = {
     },
     "2024": {
       "Biology": "papers/2023/science/sem2/biology.pdf",
+      "Chemistry": "NEHU/NEP/sem3/2024/BSC/chem/",
       "Computer Science": "papers/2023/science/sem2/compsci.pdf"
     },
     "2025": {
