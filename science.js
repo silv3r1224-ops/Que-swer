@@ -49,7 +49,7 @@ const data = {
       { name: "Question Paper 2", folder: "papers/2023/science/sem1/q2" }
     ],
     "Semester 3": [
-      { name: "Chemestry", folder: "NEHU/NEP/sem3/2024/BSC/chem/chem1.jpg" },
+      { name: "Chemistry", folder: "NEHU/NEP/sem3/2024/BSC/chem", prefix: "chem", totalPages: 11 },
       { name: "Mathematics", folder: "NEHU/NEP/sem3/2024/BSC/maths" },
       { name: "Question Paper 1", folder: "papers/2023/science/sem1/q1" },
       { name: "Question Paper 1", folder: "papers/2023/science/sem1/q1" },
