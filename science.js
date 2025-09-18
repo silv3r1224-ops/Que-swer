@@ -5,12 +5,118 @@ const data = {
       { name: "Question Paper 2", folder: "papers/2023/science/sem1/q2" }
     ],
     "Semester 2": [
-      { name: "Question Paper 1", folder: "papers/2023/science/sem2/q1" }
+      { name: "Question Paper 1", folder: "papers/2023/science/sem1/q1" },
+      { name: "Question Paper 2", folder: "papers/2023/science/sem1/q2" }
+    ],
+    "Semester 3": [
+      { name: "Question Paper 1", folder: "papers/2023/science/sem1/q1" },
+      { name: "Question Paper 1", folder: "papers/2023/science/sem1/q1" },
+      { name: "Question Paper 1", folder: "papers/2023/science/sem1/q1" },
+      { name: "Question Paper 1", folder: "papers/2023/science/sem1/q1" },
+      { name: "Question Paper 2", folder: "papers/2023/science/sem1/q2" }
+    ],
+    "Semester 4": [
+      { name: "Question Paper 1", folder: "papers/2023/science/sem1/q1" },
+      { name: "Question Paper 1", folder: "papers/2023/science/sem1/q1" },
+      { name: "Question Paper 1", folder: "papers/2023/science/sem1/q1" },
+      { name: "Question Paper 1", folder: "papers/2023/science/sem1/q1" },
+      { name: "Question Paper 1", folder: "papers/2023/science/sem1/q1" },
+      { name: "Question Paper 2", folder: "papers/2023/science/sem1/q2" }
+    ],
+    "Semester 5": [
+      { name: "Question Paper 1", folder: "papers/2023/science/sem1/q1" },
+      { name: "Question Paper 1", folder: "papers/2023/science/sem1/q1" },
+      { name: "Question Paper 1", folder: "papers/2023/science/sem1/q1" },
+      { name: "Question Paper 1", folder: "papers/2023/science/sem1/q1" },
+      { name: "Question Paper 1", folder: "papers/2023/science/sem1/q1" },
+      { name: "Question Paper 2", folder: "papers/2023/science/sem1/q2" }
+    ],
+    "Semester 6": [
+      { name: "Question Paper 1", folder: "papers/2023/science/sem1/q1" },
+      { name: "Question Paper 1", folder: "papers/2023/science/sem1/q1" },
+      { name: "Question Paper 1", folder: "papers/2023/science/sem1/q1" },
+      { name: "Question Paper 1", folder: "papers/2023/science/sem1/q1" },
+      { name: "Question Paper 2", folder: "papers/2023/science/sem1/q2" }
     ]
   },
   "2024": {
     "Semester 1": [
-      { name: "Question Paper 1", folder: "papers/2024/science/sem1/q1" }
+      { name: "Question Paper 1", folder: "papers/2023/science/sem1/q1" },
+      { name: "Question Paper 2", folder: "papers/2023/science/sem1/q2" }
+    ],
+    "Semester 2": [
+      { name: "Question Paper 1", folder: "papers/2023/science/sem1/q1" },
+      { name: "Question Paper 2", folder: "papers/2023/science/sem1/q2" }
+    ],
+    "Semester 3": [
+      { name: "Chemestry", folder: "NEHU/NEP/sem3/2024/chem" },
+      { name: "Question Paper 1", folder: "papers/2023/science/sem1/q1" },
+      { name: "Question Paper 1", folder: "papers/2023/science/sem1/q1" },
+      { name: "Question Paper 1", folder: "papers/2023/science/sem1/q1" },
+      { name: "Question Paper 2", folder: "papers/2023/science/sem1/q2" }
+    ],
+    "Semester 4": [
+      { name: "Question Paper 1", folder: "papers/2023/science/sem1/q1" },
+      { name: "Question Paper 1", folder: "papers/2023/science/sem1/q1" },
+      { name: "Question Paper 1", folder: "papers/2023/science/sem1/q1" },
+      { name: "Question Paper 1", folder: "papers/2023/science/sem1/q1" },
+      { name: "Question Paper 1", folder: "papers/2023/science/sem1/q1" },
+      { name: "Question Paper 2", folder: "papers/2023/science/sem1/q2" }
+    ],
+    "Semester 5": [
+      { name: "Question Paper 1", folder: "papers/2023/science/sem1/q1" },
+      { name: "Question Paper 1", folder: "papers/2023/science/sem1/q1" },
+      { name: "Question Paper 1", folder: "papers/2023/science/sem1/q1" },
+      { name: "Question Paper 1", folder: "papers/2023/science/sem1/q1" },
+      { name: "Question Paper 1", folder: "papers/2023/science/sem1/q1" },
+      { name: "Question Paper 2", folder: "papers/2023/science/sem1/q2" }
+    ],
+    "Semester 6": [
+      { name: "Question Paper 1", folder: "papers/2023/science/sem1/q1" },
+      { name: "Question Paper 1", folder: "papers/2023/science/sem1/q1" },
+      { name: "Question Paper 1", folder: "papers/2023/science/sem1/q1" },
+      { name: "Question Paper 1", folder: "papers/2023/science/sem1/q1" },
+      { name: "Question Paper 2", folder: "papers/2023/science/sem1/q2" }
+    ]
+  },
+  "2025": {
+    "Semester 1": [
+      { name: "Question Paper 1", folder: "papers/2023/science/sem1/q1" },
+      { name: "Question Paper 2", folder: "papers/2023/science/sem1/q2" }
+    ],
+    "Semester 2": [
+      { name: "Question Paper 1", folder: "papers/2023/science/sem1/q1" },
+      { name: "Question Paper 2", folder: "papers/2023/science/sem1/q2" }
+    ],
+    "Semester 3": [
+      { name: "Question Paper 1", folder: "papers/2023/science/sem1/q1" },
+      { name: "Question Paper 1", folder: "papers/2023/science/sem1/q1" },
+      { name: "Question Paper 1", folder: "papers/2023/science/sem1/q1" },
+      { name: "Question Paper 1", folder: "papers/2023/science/sem1/q1" },
+      { name: "Question Paper 2", folder: "papers/2023/science/sem1/q2" }
+    ],
+    "Semester 4": [
+      { name: "Question Paper 1", folder: "papers/2023/science/sem1/q1" },
+      { name: "Question Paper 1", folder: "papers/2023/science/sem1/q1" },
+      { name: "Question Paper 1", folder: "papers/2023/science/sem1/q1" },
+      { name: "Question Paper 1", folder: "papers/2023/science/sem1/q1" },
+      { name: "Question Paper 1", folder: "papers/2023/science/sem1/q1" },
+      { name: "Question Paper 2", folder: "papers/2023/science/sem1/q2" }
+    ],
+    "Semester 5": [
+      { name: "Question Paper 1", folder: "papers/2023/science/sem1/q1" },
+      { name: "Question Paper 1", folder: "papers/2023/science/sem1/q1" },
+      { name: "Question Paper 1", folder: "papers/2023/science/sem1/q1" },
+      { name: "Question Paper 1", folder: "papers/2023/science/sem1/q1" },
+      { name: "Question Paper 1", folder: "papers/2023/science/sem1/q1" },
+      { name: "Question Paper 2", folder: "papers/2023/science/sem1/q2" }
+    ],
+    "Semester 6": [
+      { name: "Question Paper 1", folder: "papers/2023/science/sem1/q1" },
+      { name: "Question Paper 1", folder: "papers/2023/science/sem1/q1" },
+      { name: "Question Paper 1", folder: "papers/2023/science/sem1/q1" },
+      { name: "Question Paper 1", folder: "papers/2023/science/sem1/q1" },
+      { name: "Question Paper 2", folder: "papers/2023/science/sem1/q2" }
     ]
   }
 };
