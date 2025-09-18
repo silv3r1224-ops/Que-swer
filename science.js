@@ -68,7 +68,7 @@ function clearBack() {
 }
 
 function loadYears() {
-  title.textContent = "Select Year";
+  title.textContent = "Select semester";
   options.innerHTML = "";
   paperView.innerHTML = "";
   showBack("", true); // back to home
@@ -81,7 +81,7 @@ function loadYears() {
 }
 
 function loadSemesters(year) {
-  title.textContent = `Select Semester (${year})`;
+  title.textContent = `Select year (${year})`;
   options.innerHTML = "";
   paperView.innerHTML = "";
   Object.keys(data[year]).forEach(sem => {
