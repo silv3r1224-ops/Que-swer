@@ -78,7 +78,7 @@ const data = {
         { name: "Group Theory", folder: "NEHU/NEP/sem3/2024/BSC/maths/gt", prefix: "gt", totalPages: 6 }
       ],
       "Computer Science": [
-        { name: "Object Oriented Java", folder: "NEHU/NEP/sem3/2024/BSC/Comp/Java", prefix: "java", totalPages: 4 },
+        { name: "Object Oriented Java", folder: "NEHU/NEP/sem3/2024/BSC/Comp/Java", prefix: "Java", totalPages: 4 },
         { name: "Computer Science", folder: "NEHU/NEP/sem3/2024/BSC/Comp", prefix: "comp", totalPages: 4 }
       ]
     },
