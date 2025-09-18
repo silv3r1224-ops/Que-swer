@@ -8,18 +8,62 @@ const data = {
       { name: "Chemistry", folder: "NEHU/NEP/sem1/2023/BSC/chem", prefix: "chem", totalPages: 6 }
     ],
     "Semester 2": [
+      { name: "Physics", folder: "NEHU/NEP/sem1/2023/BSC/physics", prefix: "phy", totalPages: 5 },
+      { name: "Chemistry", folder: "NEHU/NEP/sem1/2023/BSC/chem", prefix: "chem", totalPages: 6 }
+    ],
+    "Semester 3": [
+      { name: "Physics", folder: "NEHU/NEP/sem1/2023/BSC/physics", prefix: "phy", totalPages: 5 },
+      { name: "Chemistry", folder: "NEHU/NEP/sem1/2023/BSC/chem", prefix: "chem", totalPages: 6 }
+    ],
+    "Semester 4": [
+      { name: "Physics", folder: "NEHU/NEP/sem1/2023/BSC/physics", prefix: "phy", totalPages: 5 },
+      { name: "Chemistry", folder: "NEHU/NEP/sem1/2023/BSC/chem", prefix: "chem", totalPages: 6 }
+    ],
+    "Semester 5": [
       { name: "Biology", folder: "NEHU/NEP/sem2/2023/BSC/bio", prefix: "bio", totalPages: 4 }
     ]
   },
   "2024": {
+    "Semester 1": [
+      { name: "Physics", folder: "NEHU/NEP/sem1/2023/BSC/physics", prefix: "phy", totalPages: 5 },
+      { name: "Chemistry", folder: "NEHU/NEP/sem1/2023/BSC/chem", prefix: "chem", totalPages: 6 }
+    ],
+    "Semester 2": [
+      { name: "Physics", folder: "NEHU/NEP/sem1/2023/BSC/physics", prefix: "phy", totalPages: 5 },
+      { name: "Chemistry", folder: "NEHU/NEP/sem1/2023/BSC/chem", prefix: "chem", totalPages: 6 }
+    ],
     "Semester 3": [
       { name: "Chemistry", folder: "NEHU/NEP/sem3/2024/BSC/chem", prefix: "chem", totalPages: 11 },
       { name: "Mathematics", folder: "NEHU/NEP/sem3/2024/BSC/maths", prefix: "maths", totalPages: 8 }
+    ],
+    "Semester 4": [
+      { name: "Physics", folder: "NEHU/NEP/sem1/2023/BSC/physics", prefix: "phy", totalPages: 5 },
+      { name: "Chemistry", folder: "NEHU/NEP/sem1/2023/BSC/chem", prefix: "chem", totalPages: 6 }
+    ],
+    "Semester 5": [
+      { name: "Physics", folder: "NEHU/NEP/sem1/2023/BSC/physics", prefix: "phy", totalPages: 5 },
+      { name: "Chemistry", folder: "NEHU/NEP/sem1/2023/BSC/chem", prefix: "chem", totalPages: 6 }
     ]
   },
   "2025": {
     "Semester 1": [
-      { name: "Physics", folder: "NEHU/NEP/sem1/2025/BSC/physics", prefix: "phy", totalPages: 7 }
+      { name: "Physics", folder: "NEHU/NEP/sem1/2023/BSC/physics", prefix: "phy", totalPages: 5 },
+      { name: "Chemistry", folder: "NEHU/NEP/sem1/2023/BSC/chem", prefix: "chem", totalPages: 6 }
+    ],
+    "Semester 2": [
+      { name: "Physics", folder: "NEHU/NEP/sem1/2023/BSC/physics", prefix: "phy", totalPages: 5 },
+      { name: "Chemistry", folder: "NEHU/NEP/sem1/2023/BSC/chem", prefix: "chem", totalPages: 6 }
+    ],
+    "Semester 3": [
+      { name: "Physics", folder: "NEHU/NEP/sem1/2023/BSC/physics", prefix: "phy", totalPages: 5 },
+      { name: "Chemistry", folder: "NEHU/NEP/sem1/2023/BSC/chem", prefix: "chem", totalPages: 6 }
+    ],
+    "Semester 4": [
+      { name: "Physics", folder: "NEHU/NEP/sem1/2023/BSC/physics", prefix: "phy", totalPages: 5 },
+      { name: "Chemistry", folder: "NEHU/NEP/sem1/2023/BSC/chem", prefix: "chem", totalPages: 6 }
+    ],
+    "Semester 5": [
+      { name: "Biology", folder: "NEHU/NEP/sem2/2023/BSC/bio", prefix: "bio", totalPages: 4 }
     ]
   }
 };
