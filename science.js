@@ -88,6 +88,12 @@ const data = {
       ],
       "Chemistry": [
         { name: "Chemistry", folder: "NEHU/NEP/sem1/2023/BSC/chem", prefix: "chem", totalPages: 6 }
+      ],
+      "Computer Science": [
+        { name: "Internet and Web Application", folder: "NEHU/NEP/sem4/2024/BSC/Comp/iwa", prefix: "iwa", totalPages: 4 },
+        { name: "Data Communication and Computer Networks", folder: "NEHU/NEP/sem4/2024/BSC/Comp/cn", prefix: "cn", totalPages: 4 },
+        { name: "Operating System", folder: "NEHU/NEP/sem4/2024/BSC/Comp/os", prefix: "os", totalPages: 4 },
+        { name: "Computer System Architecture", folder: "NEHU/NEP/sem4/2024/BSC/Comp/csa", prefix: "csa", totalPages: 5 }
       ]
     },
     "Semester 5": {
@@ -138,6 +144,12 @@ const data = {
       ],
       "Chemistry": [
         { name: "Chemistry", folder: "NEHU/NEP/sem1/2023/BSC/chem", prefix: "chem", totalPages: 6 }
+      ],
+      "Computer Science": [
+        { name: "Internet and Web Application", folder: "NEHU/NEP/sem4/2025/BSC/Comp/iwa", prefix: "iwa", totalPages: 4 },
+        { name: "Data Communication and Computer Networks", folder: "NEHU/NEP/sem4/2025/BSC/Comp/cn", prefix: "cn", totalPages: 4 },
+        { name: "Operating System", folder: "NEHU/NEP/sem4/2025/BSC/Comp/os", prefix: "os", totalPages: 4 },
+        { name: "Computer System Architecture", folder: "NEHU/NEP/sem4/2025/BSC/Comp/csa", prefix: "csa", totalPages: 5 }
       ]
     },
     "Semester 5": {
