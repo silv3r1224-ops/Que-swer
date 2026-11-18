@@ -1,0 +1,383 @@
+// Que-swer — NEHU Q&A + PYQ platform schema
+// Prisma 6 · PostgreSQL
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// ------------------------------------------------------------------
+// Enums
+// ------------------------------------------------------------------
+
+enum Role {
+  STUDENT
+  MODERATOR
+  ADMIN
+}
+
+enum VoteItemType {
+  QUESTION
+  ANSWER
+}
+
+enum VoteDirection {
+  UP
+  DOWN
+}
+
+enum QuestionStatus {
+  OPEN
+  CLOSED
+  HIDDEN
+}
+
+enum NotificationType {
+  ANSWER_RECEIVED
+  ANSWER_ACCEPTED
+  REPLY_TO_ANSWER
+  COMMENT_ON_QUESTION
+  REPORT_RESOLVED
+  ROLE_CHANGED
+}
+
+enum ReportItemType {
+  QUESTION
+  ANSWER
+  COMMENT
+  USER
+}
+
+enum ReportStatus {
+  PENDING
+  REVIEWED
+  DISMISSED
+  ACTIONED
+}
+
+enum MessageStatus {
+  NEW
+  READ
+  ARCHIVED
+}
+
+// ------------------------------------------------------------------
+// Users & auth
+// ------------------------------------------------------------------
+
+model User {
+  id             String   @id @default(cuid())
+  email          String   @unique
+  username       String   @unique
+  displayName    String
+  passwordHash   String
+  role           Role     @default(STUDENT)
+  avatarUrl      String?
+  bio            String?
+  reputation     Int      @default(0)
+  isBanned       Boolean  @default(false)
+  emailVerifiedAt DateTime?
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+
+  questions   Question[]
+  answers     Answer[]
+  comments    Comment[]
+  votes       Vote[]
+  bookmarks   Bookmark[]
+  notifications Notification[]
+  reportsMade Report[]   @relation("Reporter")
+  reportsHandled Report[] @relation("Reviewer")
+  auditLogs   AuditLog[]
+  papersUploaded Paper[]  @relation("PaperUploader")
+  refreshTokens RefreshToken[]
+
+  @@index([reputation])
+}
+
+model RefreshToken {
+  id           String   @id @default(cuid())
+  userId       String
+  tokenHash    String   @unique
+  expiresAt    DateTime
+  revokedAt    DateTime?
+  replacedByTokenId String?
+  createdAt    DateTime @default(now())
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+  @@index([expiresAt])
+}
+
+// ------------------------------------------------------------------
+// Campus catalog (departments → courses → papers)
+// ------------------------------------------------------------------
+
+model Department {
+  id          String  @id @default(cuid())
+  slug        String  @unique
+  name        String
+  description String?
+  icon        String?
+  createdAt   DateTime @default(now())
+
+  courses Course[]
+  papers  Paper[]
+  questions Question[]
+}
+
+model Course {
+  id           String @id @default(cuid())
+  code         String
+  name         String
+  description  String?
+  departmentId String
+
+  department Department @relation(fields: [departmentId], references: [id], onDelete: Cascade)
+  papers     Paper[]
+  questions  Question[]
+
+  @@unique([departmentId, code])
+  @@index([departmentId])
+}
+
+// ------------------------------------------------------------------
+// Previous-year papers (PYQ library)
+// ------------------------------------------------------------------
+
+model Paper {
+  id           String  @id @default(cuid())
+  title        String
+  description  String?
+  departmentId String
+  courseId     String?
+  year         Int
+  semester     Int
+  examType     String? // e.g. "Midterm" | "Final" | "Backlog"
+  uploadedById String
+
+  department Department @relation(fields: [departmentId], references: [id], onDelete: Restrict)
+  course     Course?   @relation(fields: [courseId], references: [id], onDelete: SetNull)
+  uploadedBy User      @relation("PaperUploader", fields: [uploadedById], references: [id])
+
+  pages PaperPage[]
+  createdAt DateTime @default(now())
+  searchVector Unsupported("tsvector")?
+
+  @@index([departmentId])
+  @@index([courseId])
+  @@index([year, semester])
+}
+
+model PaperPage {
+  id       String @id @default(cuid())
+  paperId  String
+  pageNo   Int
+  fileKey  String // storage key / path
+  mimeType String
+  sizeBytes Int
+  width    Int?
+  height   Int?
+
+  paper Paper @relation(fields: [paperId], references: [id], onDelete: Cascade)
+
+  @@unique([paperId, pageNo])
+}
+
+// ------------------------------------------------------------------
+// Q&A core
+// ------------------------------------------------------------------
+
+model Question {
+  id           String         @id @default(cuid())
+  authorId     String
+  title        String
+  body         String         @db.Text
+  status       QuestionStatus @default(OPEN)
+  departmentId String?
+  courseId     String?
+  views        Int            @default(0)
+  score        Int            @default(0)
+  createdAt    DateTime       @default(now())
+  updatedAt    DateTime       @updatedAt
+  searchVector Unsupported("tsvector")?
+
+  author     User       @relation(fields: [authorId], references: [id], onDelete: Cascade)
+  department Department? @relation(fields: [departmentId], references: [id], onDelete: SetNull)
+  course     Course?    @relation(fields: [courseId], references: [id], onDelete: SetNull)
+  answers    Answer[]
+  comments   Comment[]
+  bookmarks  Bookmark[]
+  notifications Notification[]
+  tags       QuestionTag[]
+
+  @@index([authorId])
+  @@index([departmentId])
+  @@index([courseId])
+  @@index([status, createdAt])
+  @@index([score])
+  @@index([createdAt])
+}
+
+model Answer {
+  id         String  @id @default(cuid())
+  questionId String
+  authorId   String
+  body       String  @db.Text
+  isAccepted Boolean @default(false)
+  score      Int     @default(0)
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+
+  question Question @relation(fields: [questionId], references: [id], onDelete: Cascade)
+  author   User     @relation(fields: [authorId], references: [id], onDelete: Cascade)
+  comments Comment[]
+  notifications Notification[]
+
+  @@index([questionId, score])
+  @@index([authorId])
+}
+
+model Comment {
+  id         String  @id @default(cuid())
+  authorId   String
+  questionId String?
+  answerId   String?
+  body       String  @db.Text
+  createdAt  DateTime @default(now())
+
+  author   User      @relation(fields: [authorId], references: [id], onDelete: Cascade)
+  question Question? @relation(fields: [questionId], references: [id], onDelete: Cascade)
+  answer   Answer?   @relation(fields: [answerId], references: [id], onDelete: Cascade)
+
+  @@index([authorId])
+  @@index([questionId])
+  @@index([answerId])
+}
+
+model Vote {
+  id       String       @id @default(cuid())
+  userId   String
+  itemType VoteItemType
+  itemId   String
+  direction VoteDirection
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, itemType, itemId])
+  @@index([itemType, itemId])
+}
+
+// ------------------------------------------------------------------
+// Tags & bookmarks
+// ------------------------------------------------------------------
+
+model Tag {
+  id         String @id @default(cuid())
+  slug       String @unique
+  name       String
+  description String?
+  usageCount Int    @default(0)
+  createdAt  DateTime @default(now())
+
+  questions QuestionTag[]
+}
+
+model QuestionTag {
+  questionId String
+  tagId      String
+
+  question Question @relation(fields: [questionId], references: [id], onDelete: Cascade)
+  tag      Tag     @relation(fields: [tagId], references: [id], onDelete: Cascade)
+
+  @@id([questionId, tagId])
+  @@index([tagId])
+}
+
+model Bookmark {
+  id         String @id @default(cuid())
+  userId     String
+  questionId String
+  createdAt  DateTime @default(now())
+
+  user     User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  question Question  @relation(fields: [questionId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, questionId])
+  @@index([questionId])
+}
+
+// ------------------------------------------------------------------
+// Notifications, reports, messages, audit
+// ------------------------------------------------------------------
+
+model Notification {
+  id         String           @id @default(cuid())
+  userId     String
+  type       NotificationType
+  actorId    String?
+  questionId String?
+  answerId   String?
+  message    String
+  readAt     DateTime?
+  createdAt  DateTime          @default(now())
+
+  user     User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  question Question? @relation(fields: [questionId], references: [id], onDelete: Cascade)
+  answer   Answer?   @relation(fields: [answerId], references: [id], onDelete: Cascade)
+
+  @@index([userId, readAt])
+  @@index([createdAt])
+}
+
+model Report {
+  id         String       @id @default(cuid())
+  reporterId String
+  itemType   ReportItemType
+  itemId     String
+  reason     String
+  status     ReportStatus @default(PENDING)
+  reviewedById String?
+  reviewNote String?
+  createdAt  DateTime     @default(now())
+  resolvedAt DateTime?
+
+  reporter User @relation("Reporter", fields: [reporterId], references: [id], onDelete: Cascade)
+  reviewer User? @relation("Reviewer", fields: [reviewedById], references: [id], onDelete: SetNull)
+
+  @@index([status, createdAt])
+  @@index([itemType, itemId])
+}
+
+model Message {
+  id        String        @id @default(cuid())
+  name      String
+  email     String
+  subject   String?
+  body      String
+  status    MessageStatus @default(NEW)
+  createdAt DateTime      @default(now())
+
+  @@index([status, createdAt])
+}
+
+model AuditLog {
+  id        String   @id @default(cuid())
+  actorId   String?
+  action    String
+  entityType String
+  entityId  String?
+  meta      Json?
+  ip        String?
+  createdAt  DateTime @default(now())
+
+  actor User? @relation(fields: [actorId], references: [id], onDelete: SetNull)
+
+  @@index([actorId])
+  @@index([createdAt])
+}
